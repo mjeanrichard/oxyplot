@@ -118,6 +118,7 @@ namespace OxyPlot.Windows
         public void DrawEllipse(OxyRect rect, OxyColor fill, OxyColor stroke, double thickness)
         {
             var el = new Ellipse();
+            el.CompositeMode = ElementCompositeMode.SourceOver;
             if (stroke.IsVisible())
             {
                 el.Stroke = new SolidColorBrush(stroke.ToColor());
@@ -147,6 +148,7 @@ namespace OxyPlot.Windows
         public void DrawEllipses(IList<OxyRect> rectangles, OxyColor fill, OxyColor stroke, double thickness)
         {
             var path = new Path();
+            path.CompositeMode = ElementCompositeMode.SourceOver;
             this.SetStroke(path, stroke, thickness);
             if (fill.IsVisible())
             {
@@ -187,6 +189,7 @@ namespace OxyPlot.Windows
             bool aliased)
         {
             var e = new Polyline();
+            e.CompositeMode = ElementCompositeMode.SourceOver;
             this.SetStroke(e, stroke, thickness, lineJoin, dashArray, aliased);
 
             var pc = new PointCollection();
@@ -219,6 +222,7 @@ namespace OxyPlot.Windows
             bool aliased)
         {
             var path = new Path();
+            path.CompositeMode = ElementCompositeMode.SourceOver;
             this.SetStroke(path, stroke, thickness, lineJoin, dashArray, aliased);
             var pg = new PathGeometry();
             for (int i = 0; i + 1 < points.Count; i += 2)
@@ -264,6 +268,7 @@ namespace OxyPlot.Windows
             bool aliased)
         {
             var po = new Polygon();
+            po.CompositeMode = ElementCompositeMode.SourceOver;
             this.SetStroke(po, stroke, thickness, lineJoin, dashArray, aliased);
 
             if (fill.IsVisible())
@@ -303,6 +308,7 @@ namespace OxyPlot.Windows
             bool aliased)
         {
             var path = new Path();
+            path.CompositeMode = ElementCompositeMode.SourceOver;
             this.SetStroke(path, stroke, thickness, lineJoin, dashArray, aliased);
             if (fill.IsVisible())
             {
@@ -344,6 +350,7 @@ namespace OxyPlot.Windows
         public void DrawRectangle(OxyRect rect, OxyColor fill, OxyColor stroke, double thickness)
         {
             var el = new Rectangle();
+            el.CompositeMode = ElementCompositeMode.SourceOver;
             if (stroke.IsVisible())
             {
                 el.Stroke = new SolidColorBrush(stroke.ToColor());
@@ -373,6 +380,7 @@ namespace OxyPlot.Windows
         public void DrawRectangles(IList<OxyRect> rectangles, OxyColor fill, OxyColor stroke, double thickness)
         {
             var path = new Path();
+            path.CompositeMode = ElementCompositeMode.SourceOver;
             this.SetStroke(path, stroke, thickness);
             if (fill.IsVisible())
             {
